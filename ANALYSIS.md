@@ -43,8 +43,10 @@ The scanner found no matches for its email, IPv4, selected path, URL, or long-te
 
 What IS there and worth noting:
 1. Account-derived hashes. 542 `install.owner_observed` events have `ownerSource` `openai` (278) or `claude` (264).
-   In the source before commit 84e4264 (merged 24 Nov 2026), these were SHA-256 of the OpenAI user_id / Codex account_id
-   or Claude IDs read from `~/.codex/auth.json` and `~/.claude.json`, hashed with no salt
+   In the source before commit 84e4264 (merged 24 Nov 2026), `install.owner_observed` hashed the OpenAI `user_id`
+   from the unverified `id_token` or Claude `oauthAccount.accountUuid`, while legacy `distinct_id` hashed Codex
+   `account_id` (shared across a ChatGPT Team) or Claude `userID` (random per machine), read from
+   `~/.codex/auth.json` and `~/.claude.json` and hashed with no salt
    (`packages/shared/src/telemetryId.ts`). Unsalted means anyone holding the raw account ID can recompute and match it,
    and the same hash lines up across datasets. Not reversible by guessing, because the inputs are random IDs.
 2. Cross-machine linking. One legacy `distinct_id` (43ee99…) appears on macOS, Linux and Windows servers, because the
@@ -54,8 +56,9 @@ What IS there and worth noting:
    (The "sleep issues" reply in the thread is reading exactly this.)
 4. Device fingerprint. Exact phone model codes, OS major version, CPU arch, project and thread counts and 125 nightly build
    versions together narrow an install down a lot, even with no name.
-5. Scope of "100%". This is the product-event stream only. The project's own docs say relay connection traces go to
-   Axiom separately and "can include connection timings, environment identifiers and the connected machine's name".
+5. Scope of "100%". This is the product-event stream only. At commit `11edf884` (before `dc7b880`), the project's docs said
+   relay connection traces go to Axiom separately and "can include connection timings, environment identifiers and the
+   connected machine's name". Commit `dc7b880` later removed machine details from relay traces and updated `docs/user/telemetry.md`.
    Those traces are not in this dump. Whether the ingest endpoint logs IP addresses is not visible here.
 6. Dev/test data is mixed in: models such as `claude-nonexistent-9` and `agy-demo` appear, consistent with Theo developing T3 Code.
 
@@ -64,6 +67,7 @@ What IS there and worth noting:
 - 482e197 "mobile: analytics uses its own random device id".
 - 3ba003b "Windows desktop applies the saved user telemetry opt-out" (the opt-out was not applied there before).
 - 796103f "agent feedback no longer links to the install".
+- dc7b880 "respect relay tracing opt-outs and remove machine details" (merged after `11edf884`; updates relay tracing and `docs/user/telemetry.md`).
 
 ## Multi-model assessment
 The original analysis did not run other providers. Independent code assessments are now tracked in [CODE-ASSESSMENT.md](CODE-ASSESSMENT.md), with actual provider identities, revision pins, evidence limits, and unavailable providers recorded separately.
@@ -92,4 +96,4 @@ The original analysis did not run other providers. Independent code assessments 
 
 ## Follow-up verification
 
-The original scripts and both dump hashes reproduced exactly. The code assessment corrected the thread-count interpretation, connection-method scope, and turn-only usage-status counts above. A single `connect` owner hash occurs across all 16 install IDs in the dump; current source retains Connect account correlation. The export also contains 100 rows marked `to_posthog: false`. These observations do not establish receiver retention or logging policy. See [verification results](results/code-assessment/corrections.json).
+The original scripts and both dump hashes reproduced exactly. The code assessment corrected the thread-count interpretation, connection-method scope, turn-only usage-status counts, historical account-hash input split (`owner_observed` vs legacy `distinct_id`), and post-`11edf884` relay doc update (`dc7b880`) above. A single `connect` owner hash occurs across all 16 install IDs in the dump; current source retains Connect account correlation. The export also contains 100 rows marked `to_posthog: false`. These observations do not establish receiver retention or logging policy. See [verification results](results/code-assessment/corrections.json).

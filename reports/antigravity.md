@@ -4,7 +4,7 @@
 
 Antigravity authored this assessment. Codex checked the principal findings against the pinned source and executed the payload serializer with synthetic inputs. The shared-batch linkability finding reproduced. The desktop startup findings remain conditional source findings, not runtime reproductions. They require tracing configuration and a launch environment that does not already contain the opt-out. No deployed-instance behavior was verified.
 
-Codex corrected the event inventory count and narrowed unsupported certainty below. The archived source and source-linked findings remain the basis of this report.
+Codex corrected the initial event inventory count and narrowed unsupported certainty below. A subsequent independent review identified four additional active events emitted through `analytics.value.record` (`chatgpt.auth.started`, `chatgpt.auth.completed`, `chatgpt.transfer.started`, `chatgpt.transfer.completed`), bringing the active inventory to 14 event names, widened the verification grep accordingly, and removed a local workspace path from the command instructions. The archived source and source-linked findings remain the basis of this report.
 
 ## Goal and scope
 
@@ -65,7 +65,7 @@ Notice two code-defined details not visible in Theo's dump:
 
 ### Complete inventory of product analytics call sites at `55085df2`
 
-Every call to `analytics.record` or `analytics.recordOwners` across `apps/`, `packages/`, and `infra/` (excluding tests) maps to 10 active event names at `55085df2`:
+Every call to `analytics.record`, `analytics.value.record`, or `analytics.recordOwners` across `apps/`, `packages/`, and `infra/` (excluding tests) maps to 14 active event names at `55085df2`:
 
 | Event name | Source location (pinned to `55085df2`) | Trigger and fields sent |
 |---|---|---|
@@ -78,6 +78,8 @@ Every call to `analytics.record` or `analytics.recordOwners` across `apps/`, `pa
 | `provider.request.completed` | [`apps/server/src/telemetry/ProviderUsageAnalytics.ts#L422`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/telemetry/ProviderUsageAnalytics.ts#L422) | Once per settled run. Aggregates turns in `RequestUsageLedger` and adds `requestKind`, `restartContinuation`, `lifecycleObserved`, `providerTurns`, `continuations`, `steeringRestarts`, `nativeChildTurns`, `childUsageStatus`, `childInputTokens`, `childOutputTokens`, `childrenRunning`. |
 | `mcp.tool.invoked` | [`apps/server/src/mcp/McpHttpServer.ts#L1188`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/mcp/McpHttpServer.ts#L1188) | Every T3 MCP tool call. Built via [`ProviderDimensions.ts#L191-L243`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/telemetry/ProviderDimensions.ts#L191-L243). Sends `tool`, `callerProvider`, `callerModel`, `callerOrigin`, `callerDepth` (capped at 5), `durationMs`, `outcome`, `errorCode`, handoff enum settings (`targetChosen`, `mode`, `waitTimedOut`, `batchSize`, `workspace`, `delivery`, `bindToCurrentThread`), and target provider/model/modes/crossProvider. |
 | `mcp.delegated_task.finished` | [`apps/server/src/telemetry/DelegatedTaskAnalytics.ts#L62-L71`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/telemetry/DelegatedTaskAnalytics.ts#L62-L71) | App-owned subagent reaching final status. Sends `status`, `callerProvider`, `callerModel`, `targetProvider`, `targetModel`, `crossProvider`, `completionWake`, `durationSeconds`. |
+| `chatgpt.auth.started`, `chatgpt.auth.completed` | [`apps/server/src/provider/CodexChatGptAuth.ts#L125-L166`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/provider/CodexChatGptAuth.ts#L125-L166), [`L949-L969`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/provider/CodexChatGptAuth.ts#L949-L969) | Codex ChatGPT sign-in flow (`analytics.value.record`). Sends `flow`, `intent`, `callbackMode`, plus on completion `outcome`, `durationMs`, optional `failureStage`, and local account/connection counts (emails are counted locally and not exported). |
+| `chatgpt.transfer.started`, `chatgpt.transfer.completed` | [`apps/server/src/provider/CodexChatGptAuth.ts#L125-L166`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/provider/CodexChatGptAuth.ts#L125-L166), [`L1092-L1099`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/provider/CodexChatGptAuth.ts#L1092-L1099) | Primary handoff credential transfer (`analytics.value.record`). Sends `flow: "primary_handoff"` plus the completion fields above. |
 | `agent.feedback` | [`apps/server/src/feedback/FeedbackStore.ts#L208-L220`](https://github.com/pingdotgg/t3code/blob/55085df2a6c384f34b37901d5dcbc5925ada1600/apps/server/src/feedback/FeedbackStore.ts#L208-L220) | Opt-in only (default `agentFeedback.mode = "off"`). Recorded with `{ anonymous: true }`. Sends `kind`, `subject`, `userRequested`, `source`, provider/model dimensions, `trace`, and (only when user approves a card) scrubbed `expected`, `actual`, `workaround`, and optional scrubbed conversation text. |
 
 **Historical events removed before `55085df2`.** The published dump contains 7 older event names that no longer exist anywhere in `apps/server/src` at `55085df2`: `client.connected` (9,085 rows, last seen 2026-10-29), `provider.sessions.stopped_all` (61), `provider.turn.sent` (42), `provider.session.started` (28), `provider.session.stopped` (27), `provider.runtime_mode.changed` (2), and `provider.request.responded` (2).
@@ -210,7 +212,7 @@ The following cannot be proven from `pingdotgg/t3code` or `Ty-Robb/t3-telemetry-
 
 ## Reproducible verification commands
 
-Run these commands from the workspace root (`/Users/tyronerobb/.t3/scratch/2026-11-24-assess-https-github-com-ty-4e8aec1b`) to reproduce all SHA checks, dump statistics, and code searches without modifying either repository:
+Run these commands from a parent directory containing both `report-repo` and `t3code-source` to reproduce all SHA checks, dump statistics, and code searches without modifying either repository:
 
 ```bash
 # 1. Verify pinned repository SHAs
@@ -242,7 +244,7 @@ print("to_posthog=False:", len([r for r in rows if not r["to_posthog"]]))
 EOF
 
 # 3. Verify all product analytics call sites and opt-out bugs in t3code-source
-git -C t3code-source grep -n -E 'analytics\.record|recordOwners' -- apps packages infra ':!*test*'
+git -C t3code-source grep -n -E 'analytics(\.value)?\.record|recordOwners' -- apps packages infra ':!*test*'
 git -C t3code-source grep -n "resolveRelayClientTracingConfig\|relayLayer\|T3CODE_DESKTOP_SHELL_DISCOVERY_PENDING" -- apps/server/src apps/desktop/src ':!*test*'
 git -C t3code-source grep -n "OTEL" -- apps/desktop/src/shell/
 git -C t3code-source log --oneline -n 16
