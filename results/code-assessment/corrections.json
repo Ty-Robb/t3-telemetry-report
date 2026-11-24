@@ -1,0 +1,34 @@
+{
+  "createdBy_event_counts": {
+    "provider.turn.completed": 29096,
+    "provider.request.completed": 16409
+  },
+  "createdBy_values": {
+    "agent": 41211,
+    "user": 4294
+  },
+  "turn_usage_status": {
+    "complete": 37483,
+    "unavailable": 1559,
+    "partial": 1418
+  },
+  "connection_methods_by_event": {
+    "client.connected": {
+      "ssh": 2,
+      "relay": 4676,
+      "direct": 199
+    },
+    "client.thread.started": {
+      "relay": 642,
+      "direct": 249
+    },
+    "client.turn.requested": {
+      "relay": 3567,
+      "direct": 1149
+    }
+  },
+  "connect_owner_install_counts": [
+    16
+  ],
+  "to_posthog_false": 100
+}

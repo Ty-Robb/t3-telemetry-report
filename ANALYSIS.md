@@ -31,17 +31,15 @@ Analysed 24 Nov 2026 (UK time). All figures come from `results/*.json`; nothing 
 - Effort: high 23,884, xhigh 9,366, max 3,924. Runtime mode: full-access 56,787 of 56,908.
 - Tokens on `provider.turn.completed`: 203.3B input, of which 199.7B cached (98.2%); 0.61B output; 0.23B reasoning.
   Codex 110.0B input, Claude 88.4B. Single biggest turn: 880.8M input tokens (Codex, with subagents).
-- Heavy agent orchestration: 6,186 `delegate_task` calls; 45,505 thread-creating events, 41,211 created by an agent vs 4,294 by the user.
+- Heavy agent orchestration: 6,186 `delegate_task` calls; 45,505 turn/request events carrying `createdBy`, 41,211 attributed to an agent vs 4,294 to the user. These are not counts of distinct threads.
   Claude delegates most: claude→claude 2,813, claude→codex 1,598, claude→muse 844, claude→antigravity 698.
 - Ramp-up: under 500 events/week in September, then 23,396 in the week of 19 Oct.
-- Server OS: Linux 71,213 events, macOS 17,318, Windows 7,258. Clients via relay 8,885, direct 1,597, ssh 2.
+- Server OS: Linux 71,213 events, macOS 17,318, Windows 7,258. `client.connected` events with a connection method: relay 4,676, direct 199, ssh 2. The previous 8,885/1,597/2 totals mixed connections, thread starts, and turn requests.
 - Phones/tablets: iOS 1,472 events and Android 104, with device models iPhone19,3, "iPhone Duo", iPhone 18 Pro Max, iPhone18,2, SM-F971U1.
 - Tool errors: 1,596 of 12,109 MCP tool calls (13.2%), led by `unknown` 821 and `OrchestratorMcpFailure` 540.
 
 ## Privacy assessment
-What is NOT there: a scan of every string value found no emails, IPv4 addresses, file paths, URLs or free text.
-No prompts, responses, repo names or file names. Every string field is a closed enum, a version, a model ID or a hash.
-That matches Theo's claims for this file.
+The scanner found no matches for its email, IPv4, selected path, URL, or long-text patterns in top-level property strings and `user_agent`. This is a limited pattern scan, not proof that all personal information is absent. No prompt or response fields were identified in this export. Custom model IDs and device labels also appear; strings are not all closed enums or hashes. See [the code assessment](CODE-ASSESSMENT.md) for data paths outside this export.
 
 What IS there and worth noting:
 1. Account-derived hashes. 542 `install.owner_observed` events have `ownerSource` `openai` (278) or `claude` (264).
@@ -68,8 +66,7 @@ What IS there and worth noting:
 - 796103f "agent feedback no longer links to the install".
 
 ## Multi-model assessment
-Not run. No API keys or logged-in CLIs for Anthropic, OpenAI, Google or xAI were available on the analysis machine, and
-none were requested. No other model's opinion is simulated here.
+The original analysis did not run other providers. Independent code assessments are now tracked in [CODE-ASSESSMENT.md](CODE-ASSESSMENT.md), with actual provider identities, revision pins, evidence limits, and unavailable providers recorded separately.
 
 ## Appendix: Methodology
 1. Question: what can be learned from Theo's published T3 Code event dump, and is anything in it identifying or sensitive?
@@ -84,7 +81,7 @@ none were requested. No other model's opinion is simulated here.
    Uncached input = inputTokens − cachedInputTokens. PII scan regexes are in `scripts/analyse.py`.
 5. Assumptions: `timestamp` is UTC (PostHog convention, not stated in the file). `cachedInputTokens` is a subset of
    `inputTokens` (checked: on all 38,901 turns that carry both fields, cached never exceeds input). Token counts are as the provider reported them;
-   2,611 turns had `usageStatus` unavailable and 2,091 partial, so totals are a floor.
+   1,559 `provider.turn.completed` events had `usageStatus` unavailable and 1,418 partial, so totals are a floor.
 6. Limitations: one user's data; cannot show what other users' events look like, what the ingest server logs (IP), or the
    Axiom traces. Confidence: event counts and schema high; privacy-of-content finding high for this file; hash-derivation
    finding high (read from source); daily-rhythm reading medium (depends on the UTC assumption and agents running unattended).
@@ -92,3 +89,7 @@ none were requested. No other model's opinion is simulated here.
    `provider.turn.completed 40460`, total inputTokens 203,305,106,680.
 8. Open questions: does ingest.t3.codes store client IPs; what retention applies to the PostHog copy and to Axiom traces;
    whether old account-derived hashes will be deleted or re-keyed now that 84e4264 has merged.
+
+## Follow-up verification
+
+The original scripts and both dump hashes reproduced exactly. The code assessment corrected the thread-count interpretation, connection-method scope, and turn-only usage-status counts above. A single `connect` owner hash occurs across all 16 install IDs in the dump; current source retains Connect account correlation. The export also contains 100 rows marked `to_posthog: false`. These observations do not establish receiver retention or logging policy. See [verification results](results/code-assessment/corrections.json).

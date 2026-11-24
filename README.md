@@ -20,3 +20,7 @@ python3 scripts/profile.py  data/t3code-telemetry-events-jsonl-a4896cdc > result
 python3 scripts/analyse.py  data/t3code-telemetry-events-jsonl-a4896cdc results
 python3 scripts/extras.py   data/t3code-telemetry-events-jsonl-a4896cdc results
 ```
+
+## Independent code assessments
+
+[CODE-ASSESSMENT.md](CODE-ASSESSMENT.md) traces T3 Code's implementation, data destinations, opt-outs, and privacy limitations. It links the actual provider reports and records unavailable providers. The original dump and generated aggregates are unchanged; `ANALYSIS.md` now corrects interpretation errors found during review.
