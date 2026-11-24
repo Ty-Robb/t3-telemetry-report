@@ -1,0 +1,130 @@
+rows 95789
+top keys Counter({'uuid': 95789, 'event': 95789, 'distinct_id': 95789, 'timestamp': 95789, 'received_at': 95789, 'inserted_at': 95789, 'properties': 95789, 'user_agent': 95789, 'to_posthog': 95789})
+min/max ts 2026-09-04 10:48:28.561 2026-11-24 17:28:02.457
+distinct_ids 14
+[('43ee99db4e64db218c26b1f6ad75a8214969208fbf2e57843c319bb0ef5c28d4', 26273), ('58939548d2c136722444b499b25d848b26b433aef6fcc1efeaab5e9cb8ec382e', 21960), ('e25f82654288d1b30912f9568eaf1dbf1549c5d5cc56442628b9728b2eea3a07', 20400), ('00f3b1991512c4ef27ff5dfe3867d386aae9137c26a4a83064c624e0f4f090d0', 9546), ('1ce84a7162295f608013538565f9c4d1540e03f31e92d6fe81fb5d853caf8548', 5342), ('66de9ef6be0e1761d5daf85b002705f5bd077efc59dbe54e4d0e3c50a67a973d', 3101), ('759117feeead26b103d61d59384862ef60748d9dc46d2d071df350474cf718d6', 3072), ('592e8074b8211d1529ff20037c913bb3ff860d942b9c9ba247d415bad72c55bf', 2976), ('3b4840ca3d1acd65c04c64b9a21071a7cae92a97057f173c6d4faa47328f8e16', 1984), ('7f42123a21f48c997a2c95364dc9dc0ac92b13ad05edfc82aa75c1222dced5bc', 834), ('a41ecda0cb0c66a199871e9f4a681b05740e1ad6adc52d10aaad5e1ebb6011a3', 205), ('6eae89248d89a4339161d7db1193f8da4c7c42726aa278013974f7b3f84d1434', 62), ('48488d65539221cbe5e8e2ab6ff0b3f602d283158949b7396fb94d9ce6fe88e6', 32), ('e804e0423beebfe912ecfb8620cbc7a98baca214dbdb3e74f5d85313056b7ec2', 2)]
+user_agent [('node', 60434), ('', 35355)]
+to_posthog Counter({True: 95689, False: 100})
+
+EVENTS 16
+    40460 provider.turn.completed
+    16409 provider.request.completed
+    12109 mcp.tool.invoked
+     9085 client.connected
+     6786 mcp.delegated_task.finished
+     4760 client.turn.requested
+     2660 install.owner_observed
+     1545 feature.used
+      914 client.thread.started
+      899 server.boot.heartbeat
+       61 provider.sessions.stopped_all
+       42 provider.turn.sent
+       28 provider.session.started
+       27 provider.session.stopped
+        2 provider.runtime_mode.changed
+        2 provider.request.responded
+
+PROPS 103
+    95789 $process_person_profile  uniq=1  e.g. [('false', 95789)]
+    95789 arch  uniq=2  e.g. [('x64', 78471), ('arm64', 17318)]
+    95789 clientType  uniq=2  e.g. [('cli-web-client', 81178), ('desktop-app', 14611)]
+    95789 platform  uniq=3  e.g. [('linux', 71213), ('darwin', 17318), ('win32', 7258)]
+    95789 serverAppVersion  uniq=125  e.g. [('0.1.8-nightly.20261106.4262', 8559), ('0.1.2-nightly.20261021.3499', 8019), ('0.1.7-nightly.20261102.4066', 6636), ('0.1.2-nightly.20261021.3457', 5015), ('0.1.11-nightly.20261118.4864', 3625), ('0.1.8-nightly.20261109.4399', 3516)]
+    95789 serverArch  uniq=2  e.g. [('x64', 78471), ('arm64', 17318)]
+    95789 serverMode  uniq=2  e.g. [('web', 81178), ('desktop', 14611)]
+    95789 serverOs  uniq=3  e.g. [('Linux', 71213), ('macOS', 17318), ('Windows', 7258)]
+    95789 t3CodeVersion  uniq=125  e.g. [('0.1.8-nightly.20261106.4262', 8559), ('0.1.2-nightly.20261021.3499', 8019), ('0.1.7-nightly.20261102.4066', 6636), ('0.1.2-nightly.20261021.3457', 5015), ('0.1.11-nightly.20261118.4864', 3625), ('0.1.8-nightly.20261109.4399', 3516)]
+    86614 telemetryChannel  uniq=3  e.g. [('nightly', 86579), ('preview', 33), ('stable', 2)]
+    86322 installId  uniq=16  e.g. [('3309264d392d8134fa940fd33ca83613b7d23f5b066207d80c53eb053173b1d0', 21960), ('a482ba5e966aee14145be0ad2d13b521b4ef136d4aaa6e349a992425357c440d', 17624), ('67b554ed259ac60bdde37e3abef675478545561b246be4b9c0dbc7eb6d05c938', 14520), ('f756376079c562e38183d8f4db740776c493a27077d09dabac162d496deabd86', 7199), ('6f24ed1088e8506c262721cea4c0710b50ebfcf166ebc1d8c22c6fd846ce7088', 7081), ('c22fbce3b582823c91e467959afa6edcb5e5e6566d4497be8e22f8718eea71d2', 5342)]
+    68621 durationMs  uniq=5000  e.g. [('15884', 4), ('0', 4), ('9133', 3), ('15811', 3), ('16093', 3), ('3308', 3)]
+    56970 provider  uniq=7  e.g. [('claudeAgent', 30808), ('codex', 21840), ('antigravity', 2608), ('muse', 1665), ('grok', 31), ('pi', 16)]
+    56908 runtimeMode  uniq=3  e.g. [('full-access', 56787), ('auto', 106), ('approval-required', 15)]
+    56880 interactionMode  uniq=1  e.g. [('default', 56880)]
+    56869 terminalStatus  uniq=3  e.g. [('completed', 56153), ('interrupted', 467), ('failed', 249)]
+    56869 usageStatus  uniq=3  e.g. [('complete', 52167), ('unavailable', 2611), ('partial', 2091)]
+    54258 inputTokens  uniq=5000  e.g. [('0', 8), ('455420', 2), ('318377', 2), ('185026', 2), ('228218', 2), ('265630', 2)]
+    54258 outputTokens  uniq=5000  e.g. [('25', 54), ('24', 33), ('69', 30), ('66', 30), ('246', 27), ('76', 25)]
+    54246 cacheCreationTokens  uniq=5000  e.g. [('0', 2748), ('744', 16), ('729', 16), ('353', 13), ('1091', 13), ('356', 12)]
+    54246 cachedInputTokens  uniq=5000  e.g. [('0', 21), ('54270', 11), ('11417', 7), ('109952', 5), ('379520', 4), ('153856', 3)]
+    54246 reasoningTokens  uniq=5000  e.g. [('0', 4241), ('9', 44), ('36', 37), ('12', 34), ('40', 33), ('34', 31)]
+    53466 mixedModels  uniq=1  e.g. [('false', 53466)]
+    45505 createdBy  uniq=2  e.g. [('agent', 41211), ('user', 4294)]
+    45505 creationSource  uniq=5  e.g. [('mcp', 23259), ('server', 12088), ('provider', 6103), ('web', 3786), ('mobile', 269)]
+    45505 scheduled  uniq=2  e.g. [('false', 44387), ('true', 1118)]
+    45505 subagent  uniq=2  e.g. [('true', 25038), ('false', 20467)]
+    40460 usageScope  uniq=1  e.g. [('main_agent', 40460)]
+    40024 hasSubagents  uniq=2  e.g. [('false', 37203), ('true', 2821)]
+    38569 effort  uniq=7  e.g. [('high', 23884), ('xhigh', 9366), ('max', 3924), ('medium', 744), ('ultra', 345), ('ultracode', 230)]
+    37735 model  uniq=31  e.g. [('claude-opus-5-5', 24922), ('claude-fable-5-2', 5367), ('gpt-6.1-sol', 3404), ('gpt-6-astra', 1801), ('muse-proxy-wonder-full', 800), ('gemini-4-argon-high', 254)]
+    34880 reportVersion  uniq=1  e.g. [('2', 34880)]
+    18895 callerProvider  uniq=6  e.g. [('claudeAgent', 13445), ('codex', 3308), ('unknown', 1542), ('antigravity', 319), ('muse', 280), ('grok', 1)]
+    18471 usageReported  uniq=2  e.g. [('true', 18468), ('false', 3)]
+    18471 segment  uniq=4  e.g. [('initial', 16073), ('native_child', 1833), ('continuation', 477), ('steering_restart', 88)]
+    16409 requestKind  uniq=5  e.g. [('t3_child', 9633), ('agent', 3919), ('user', 1285), ('provider_continuation', 1017), ('scheduled', 555)]
+    16409 lifecycleObserved  uniq=2  e.g. [('true', 16221), ('false', 188)]
+    16409 providerTurns  uniq=13  e.g. [('1', 15983), ('0', 357), ('2', 51), ('3', 5), ('4', 4), ('6', 2)]
+    16409 continuations  uniq=10  e.g. [('0', 16400), ('62', 1), ('11', 1), ('1', 1), ('3', 1), ('26', 1)]
+    16409 steeringRestarts  uniq=5  e.g. [('0', 16349), ('1', 50), ('2', 5), ('3', 3), ('5', 2)]
+    16409 nativeChildTurns  uniq=14  e.g. [('0', 16308), ('1', 50), ('3', 16), ('2', 15), ('4', 7), ('5', 4)]
+    16409 childUsageStatus  uniq=4  e.g. [('none', 15826), ('unavailable', 482), ('complete', 97), ('partial', 4)]
+    15430 observedModel  uniq=7  e.g. [('claude-opus-5-5', 8798), ('claude-fable-5-2', 5262), ('gpt-6.1-sol', 1023), ('gpt-6-astra', 283), ('claude-fable-5-1', 30), ('claude-sonnet-5-5', 18)]
+    14336 otherInputTokens  uniq=2948  e.g. [('0', 8392), ('1360', 10), ('1450', 4), ('1725', 4), ('1705', 4), ('1805', 4)]
+    14336 otherOutputTokens  uniq=1810  e.g. [('0', 8400), ('14', 138), ('13', 114), ('7', 108), ('12', 106), ('11', 96)]
+    13585 targetProvider  uniq=6  e.g. [('claudeAgent', 5914), ('codex', 4291), ('muse', 1782), ('antigravity', 1538), ('grok', 56), ('opencode', 4)]
+    13445 callerModel  uniq=10  e.g. [('claude-opus-5-5', 9952), ('claude-fable-5-2', 1988), ('gpt-6.1-sol', 708), ('gpt-6-astra', 377), ('gemini-4-neon', 214), ('gemini-4-carbon', 77)]
+    13225 crossProvider  uniq=2  e.g. [('true', 6736), ('false', 6489)]
+    12491 surface  uniq=3  e.g. [('desktop', 10720), ('mobile', 1608), ('web', 163)]
+    12109 tool  uniq=59  e.g. [('delegate_task', 6186), ('t3_thread_read', 1346), ('task_status', 674), ('t3_thread_send', 643), ('html_preview', 589), ('link_pull_request', 470)]
+    12109 outcome  uniq=2  e.g. [('ok', 10513), ('error', 1596)]
+    11786 targetModel  uniq=23  e.g. [('claude-opus-5-5', 4694), ('gpt-6.1-sol', 2773), ('gpt-6-astra', 829), ('claude-fable-5-2', 819), ('gemini-4-argon', 709), ('gemini-4-argon-high', 468)]
+    11185 childKind  uniq=2  e.g. [('t3', 9352), ('native', 1833)]
+    10983 appVersion  uniq=129  e.g. [('0.1.2-nightly.20261021.3499', 1049), ('0.1.0', 710), ('3.0.0', 548), ('0.1.2-nightly.20261021.3473', 406), ('0.1.3-nightly.20261024.3630', 340), ('0.1.8-nightly.20261106.4262', 299)]
+    10983 clientAppVersion  uniq=129  e.g. [('0.1.2-nightly.20261021.3499', 1049), ('0.1.0', 710), ('3.0.0', 548), ('0.1.2-nightly.20261021.3473', 406), ('0.1.3-nightly.20261024.3630', 340), ('0.1.8-nightly.20261106.4262', 299)]
+    10983 clientOs  uniq=5  e.g. [('macOS', 9273), ('iOS', 1472), ('Linux', 131), ('Android', 104), ('Windows', 3)]
+    10484 clientDeviceType  uniq=3  e.g. [('desktop', 9407), ('phone', 976), ('tablet', 101)]
+    10484 connectionMethod  uniq=3  e.g. [('relay', 8885), ('direct', 1597), ('ssh', 2)]
+     6803 callerOrigin  uniq=4  e.g. [('user', 5993), ('agent', 772), ('system', 24), ('scheduler', 14)]
+     6803 callerDepth  uniq=2  e.g. [('0', 6727), ('1', 76)]
+     6799 targetRuntimeMode  uniq=2  e.g. [('full-access', 6771), ('auto', 28)]
+     6799 targetInteractionMode  uniq=1  e.g. [('default', 6799)]
+     6786 status  uniq=4  e.g. [('completed', 6616), ('interrupted', 84), ('failed', 75), ('cancelled', 11)]
+     6786 completionWake  uniq=2  e.g. [('always', 6713), ('settled_only', 73)]
+     6786 durationSeconds  uniq=1746  e.g. [('95', 24), ('128', 24), ('138', 23), ('158', 23), ('89', 22), ('88', 22)]
+     6554 targetChosen  uniq=2  e.g. [('true', 6427), ('false', 127)]
+     6186 mode  uniq=2  e.g. [('async', 6094), ('wait', 92)]
+     4902 serviceTier  uniq=3  e.g. [('standard', 4830), ('ultrafast', 62), ('fast', 10)]
+     2660 ownerSource  uniq=4  e.g. [('connect', 1109), ('device', 1009), ('openai', 278), ('claude', 264)]
+     2660 ownerId  uniq=15  e.g. [('bc4d238252997c57578dc23273e1b29478d13f4a08eb8ab36821170ebd529e05', 1109), ('148bd9603c9e83fffe9bd9c629024a99ed3f78dc6d19dbe548d6281a65f11161', 558), ('518615ac795e60c4733e2a99c719d304f22940950faa941791c3ce0e80a32501', 297), ('3531bf708f5e0e257ecb561e2e88e9d3186307bc45d94d03f4da0ae92310b882', 212), ('a6e59d2b55af34231219e93cac7d196367a85eded01563a71227858f456b2480', 180), ('f8fc95b3db23723e9544a17f1f9520a570841007e0147986294952e82339a358', 84)]
+     2660 observedBy  uniq=2  e.g. [('client', 1549), ('server', 1111)]
+     1596 errorCode  uniq=9  e.g. [('unknown', 821), ('OrchestratorMcpFailure', 540), ('exception', 165), ('PreviewAutomationTimeoutError', 42), ('PreviewAutomationExecutionError', 11), ('AiError', 9)]
+     1576 clientDeviceModel  uniq=7  e.g. [('iPhone19,3', 595), ('iPhone Duo', 575), ('iPhone 18 Pro Max', 183), ('iPhone18,2', 115), ('SM-F971U1', 101), ('iPhone19,4', 4)]
+     1576 clientOsMajorVersion  uniq=3  e.g. [('27', 1472), ('17', 101), ('16', 3)]
+     1576 deviceModel  uniq=7  e.g. [('iPhone19,3', 595), ('iPhone Duo', 575), ('iPhone 18 Pro Max', 183), ('iPhone18,2', 115), ('SM-F971U1', 101), ('iPhone19,4', 4)]
+     1576 os  uniq=2  e.g. [('iOS', 1472), ('Android', 104)]
+     1576 osMajorVersion  uniq=3  e.g. [('27', 1472), ('17', 101), ('16', 3)]
+     1545 feature  uniq=24  e.g. [('thread.settle', 806), ('thread.snooze', 307), ('thread.launch', 185), ('queue.steer', 46), ('thread.pin', 37), ('terminal.open', 35)]
+      899 projectCount  uniq=33  e.g. [('6', 169), ('2', 140), ('7', 95), ('0', 52), ('15', 48), ('13', 39)]
+      899 threadCount  uniq=331  e.g. [('4', 119), ('0', 61), ('1', 53), ('2', 26), ('3', 22), ('577', 15)]
+      634 workspaceStrategy  uniq=2  e.g. [('worktree', 433), ('root', 201)]
+      618 delivery  uniq=3  e.g. [('started', 414), ('steered', 187), ('queued', 17)]
+      368 workspace  uniq=3  e.g. [('root', 255), ('worktree', 87), ('scratch', 26)]
+      227 variant  uniq=10  e.g. [('worktree', 117), ('root', 47), ('existing_worktree', 21), ('vscode', 11), ('merge', 10), ('full-access', 7)]
+      188 restartContinuation  uniq=1  e.g. [('true', 188)]
+      182 childrenRunning  uniq=1  e.g. [('true', 182)]
+      163 clientBrowser  uniq=2  e.g. [('Chrome', 160), ('Firefox', 3)]
+      163 webDeployment  uniq=2  e.g. [('server', 156), ('hosted', 7)]
+      101 childInputTokens  uniq=101  e.g. [('195342', 1), ('7658836', 1), ('19183814', 1), ('614934', 1), ('2854719', 1), ('9351028', 1)]
+      101 childOutputTokens  uniq=101  e.g. [('505', 1), ('23435', 1), ('91598', 1), ('1782', 1), ('12738', 1), ('34592', 1)]
+       86 localCommand  uniq=1  e.g. [('true', 86)]
+       42 attachmentCount  uniq=2  e.g. [('0', 41), ('1', 1)]
+       42 hasInput  uniq=1  e.g. [('true', 42)]
+       32 sessionCount  uniq=7  e.g. [('0', 13), ('4', 7), ('3', 5), ('5', 3), ('13', 2), ('8', 1)]
+       29 stoppedSessionCount  uniq=2  e.g. [('0', 26), ('1', 3)]
+       28 hasCwd  uniq=1  e.g. [('true', 28)]
+       28 hasModel  uniq=1  e.g. [('true', 28)]
+       28 hasResumeCursor  uniq=1  e.g. [('true', 28)]
+       13 waitTimedOut  uniq=1  e.g. [('true', 13)]
+        6 bindToCurrentThread  uniq=1  e.g. [('true', 6)]
+        2 from  uniq=1  e.g. [('full-access', 2)]
+        2 to  uniq=1  e.g. [('approval-required', 2)]
+        2 decision  uniq=2  e.g. [('accept', 1), ('decline', 1)]

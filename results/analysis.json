@@ -1,0 +1,1050 @@
+{
+ "daily": {
+  "2026-09-04": 59,
+  "2026-09-05": 41,
+  "2026-09-06": 52,
+  "2026-09-07": 52,
+  "2026-09-08": 22,
+  "2026-09-09": 28,
+  "2026-09-10": 68,
+  "2026-09-11": 28,
+  "2026-09-12": 27,
+  "2026-09-13": 10,
+  "2026-09-14": 31,
+  "2026-09-15": 24,
+  "2026-09-16": 57,
+  "2026-09-17": 49,
+  "2026-09-18": 23,
+  "2026-09-19": 4,
+  "2026-09-20": 1,
+  "2026-09-21": 31,
+  "2026-09-22": 22,
+  "2026-09-23": 22,
+  "2026-09-24": 111,
+  "2026-09-25": 70,
+  "2026-09-26": 76,
+  "2026-09-27": 76,
+  "2026-09-28": 74,
+  "2026-09-29": 135,
+  "2026-09-30": 86,
+  "2026-10-01": 63,
+  "2026-10-02": 75,
+  "2026-10-03": 68,
+  "2026-10-04": 2808,
+  "2026-10-05": 1813,
+  "2026-10-06": 150,
+  "2026-10-07": 150,
+  "2026-10-08": 230,
+  "2026-10-09": 165,
+  "2026-10-10": 262,
+  "2026-10-11": 132,
+  "2026-10-12": 288,
+  "2026-10-13": 408,
+  "2026-10-14": 641,
+  "2026-10-15": 188,
+  "2026-10-16": 121,
+  "2026-10-17": 85,
+  "2026-10-18": 144,
+  "2026-10-19": 213,
+  "2026-10-20": 2178,
+  "2026-10-21": 7746,
+  "2026-10-22": 2463,
+  "2026-10-23": 4298,
+  "2026-10-24": 2820,
+  "2026-10-25": 3678,
+  "2026-10-26": 2442,
+  "2026-10-27": 3537,
+  "2026-10-28": 2731,
+  "2026-10-29": 3060,
+  "2026-10-30": 566,
+  "2026-10-31": 2163,
+  "2026-11-01": 2037,
+  "2026-11-02": 7091,
+  "2026-11-03": 5137,
+  "2026-11-04": 1894,
+  "2026-11-05": 854,
+  "2026-11-06": 3092,
+  "2026-11-07": 1832,
+  "2026-11-08": 2414,
+  "2026-11-09": 7096,
+  "2026-11-10": 1563,
+  "2026-11-11": 1893,
+  "2026-11-12": 3436,
+  "2026-11-13": 997,
+  "2026-11-14": 1040,
+  "2026-11-15": 345,
+  "2026-11-16": 350,
+  "2026-11-17": 585,
+  "2026-11-18": 1870,
+  "2026-11-19": 3063,
+  "2026-11-20": 1064,
+  "2026-11-21": 590,
+  "2026-11-22": 246,
+  "2026-11-23": 237,
+  "2026-11-24": 98
+ },
+ "hour_utc": {
+  "0": 4163,
+  "1": 4923,
+  "2": 5219,
+  "3": 4362,
+  "4": 4650,
+  "5": 4344,
+  "6": 4477,
+  "7": 5292,
+  "8": 4941,
+  "9": 6808,
+  "10": 6574,
+  "11": 6114,
+  "12": 4124,
+  "13": 3170,
+  "14": 2259,
+  "15": 2042,
+  "16": 2033,
+  "17": 2021,
+  "18": 1687,
+  "19": 2220,
+  "20": 2622,
+  "21": 3477,
+  "22": 3936,
+  "23": 4331
+ },
+ "weekday": {
+  "Fri": 10558,
+  "Sat": 9008,
+  "Sun": 11943,
+  "Mon": 19718,
+  "Tue": 13859,
+  "Wed": 17118,
+  "Thu": 13585
+ },
+ "active_days": 82,
+ "span_days": 81,
+ "weekly_events": {
+  "2026-08-31": {
+   "server.boot.heartbeat": 18,
+   "client.connected": 87,
+   "provider.sessions.stopped_all": 16,
+   "client.thread.started": 3,
+   "client.turn.requested": 10,
+   "provider.session.started": 7,
+   "provider.session.stopped": 7,
+   "provider.turn.sent": 3,
+   "provider.turn.completed": 1
+  },
+  "2026-09-07": {
+   "client.connected": 215,
+   "provider.sessions.stopped_all": 6,
+   "server.boot.heartbeat": 6,
+   "client.thread.started": 1,
+   "client.turn.requested": 1,
+   "provider.session.started": 1,
+   "provider.turn.sent": 1,
+   "provider.turn.completed": 1,
+   "provider.session.stopped": 3
+  },
+  "2026-09-14": {
+   "client.connected": 176,
+   "provider.sessions.stopped_all": 4,
+   "server.boot.heartbeat": 4,
+   "client.turn.requested": 1,
+   "client.thread.started": 1,
+   "provider.session.started": 1,
+   "provider.session.stopped": 2
+  },
+  "2026-09-21": {
+   "client.connected": 241,
+   "provider.sessions.stopped_all": 18,
+   "server.boot.heartbeat": 22,
+   "client.thread.started": 6,
+   "client.turn.requested": 20,
+   "provider.session.started": 12,
+   "provider.turn.sent": 25,
+   "provider.turn.completed": 54,
+   "provider.session.stopped": 10
+  },
+  "2026-09-28": {
+   "client.turn.requested": 40,
+   "provider.turn.sent": 13,
+   "provider.turn.completed": 2683,
+   "client.connected": 488,
+   "provider.session.stopped": 5,
+   "provider.session.started": 7,
+   "server.boot.heartbeat": 37,
+   "provider.sessions.stopped_all": 15,
+   "client.thread.started": 17,
+   "provider.runtime_mode.changed": 2,
+   "provider.request.responded": 2
+  },
+  "2026-10-05": {
+   "client.connected": 633,
+   "client.turn.requested": 123,
+   "client.thread.started": 40,
+   "provider.turn.completed": 2003,
+   "server.boot.heartbeat": 103
+  },
+  "2026-10-12": {
+   "client.turn.requested": 93,
+   "client.thread.started": 24,
+   "server.boot.heartbeat": 126,
+   "provider.turn.completed": 671,
+   "client.connected": 960,
+   "provider.sessions.stopped_all": 1
+  },
+  "2026-10-19": {
+   "client.connected": 6244,
+   "client.thread.started": 240,
+   "client.turn.requested": 1175,
+   "provider.turn.completed": 7125,
+   "server.boot.heartbeat": 117,
+   "install.owner_observed": 505,
+   "mcp.tool.invoked": 5522,
+   "mcp.delegated_task.finished": 1893,
+   "feature.used": 575
+  },
+  "2026-10-26": {
+   "provider.turn.completed": 7851,
+   "mcp.delegated_task.finished": 2378,
+   "feature.used": 474,
+   "client.turn.requested": 1550,
+   "mcp.tool.invoked": 2751,
+   "server.boot.heartbeat": 226,
+   "install.owner_observed": 1006,
+   "client.thread.started": 258,
+   "client.connected": 41,
+   "provider.sessions.stopped_all": 1
+  },
+  "2026-11-02": {
+   "provider.turn.completed": 11168,
+   "mcp.tool.invoked": 1425,
+   "mcp.delegated_task.finished": 623,
+   "client.turn.requested": 599,
+   "client.thread.started": 113,
+   "feature.used": 167,
+   "install.owner_observed": 301,
+   "server.boot.heartbeat": 63,
+   "provider.request.completed": 7855
+  },
+  "2026-11-09": {
+   "provider.turn.completed": 6083,
+   "provider.request.completed": 5757,
+   "mcp.delegated_task.finished": 1166,
+   "mcp.tool.invoked": 1523,
+   "client.turn.requested": 823,
+   "client.thread.started": 146,
+   "feature.used": 203,
+   "server.boot.heartbeat": 120,
+   "install.owner_observed": 549
+  },
+  "2026-11-16": {
+   "provider.turn.completed": 2712,
+   "provider.request.completed": 2689,
+   "mcp.delegated_task.finished": 708,
+   "mcp.tool.invoked": 845,
+   "client.turn.requested": 293,
+   "client.thread.started": 58,
+   "feature.used": 117,
+   "server.boot.heartbeat": 57,
+   "install.owner_observed": 289
+  },
+  "2026-11-23": {
+   "client.turn.requested": 32,
+   "provider.turn.completed": 108,
+   "provider.request.completed": 108,
+   "client.thread.started": 7,
+   "feature.used": 9,
+   "mcp.tool.invoked": 43,
+   "mcp.delegated_task.finished": 18,
+   "install.owner_observed": 10
+  }
+ },
+ "tokens_by_model": {
+  "claude-opus-5-5": {
+   "inputTokens": 68112463970,
+   "outputTokens": 206158467,
+   "cachedInputTokens": 67109406927,
+   "cacheCreationTokens": 1002464481,
+   "reasoningTokens": 90281346,
+   "turns": 20464
+  },
+  "codex": {
+   "inputTokens": 101110792116,
+   "outputTokens": 265828864,
+   "cachedInputTokens": 99736947840,
+   "cacheCreationTokens": 1347880096,
+   "reasoningTokens": 83513653,
+   "turns": 9160
+  },
+  "gpt-6.1-sol": {
+   "inputTokens": 5380743452,
+   "outputTokens": 23145442,
+   "cachedInputTokens": 5109956864,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 10095848,
+   "turns": 2890
+  },
+  "claude-fable-5-2": {
+   "inputTokens": 18730510373,
+   "outputTokens": 51423693,
+   "cachedInputTokens": 18458533230,
+   "cacheCreationTokens": 271887399,
+   "reasoningTokens": 22192653,
+   "turns": 2683
+  },
+  "gpt-6-astra": {
+   "inputTokens": 3142049420,
+   "outputTokens": 17507170,
+   "cachedInputTokens": 3029924210,
+   "cacheCreationTokens": 418468,
+   "reasoningTokens": 5538691,
+   "turns": 1650
+  },
+  "antigravity": {
+   "turns": 983,
+   "inputTokens": 1628065043,
+   "outputTokens": 12077327,
+   "cachedInputTokens": 1237356224,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 4032289
+  },
+  "muse-proxy-wonder-full": {
+   "inputTokens": 2173382362,
+   "outputTokens": 10502996,
+   "cachedInputTokens": 2058452860,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 5806876,
+   "turns": 800
+  },
+  "muse": {
+   "inputTokens": 914845812,
+   "outputTokens": 5393302,
+   "cachedInputTokens": 879002108,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 2832996,
+   "turns": 398
+  },
+  "gemini-4-argon-high": {
+   "turns": 254
+  },
+  "gemini-4-argon": {
+   "turns": 247
+  },
+  "gpt-6-luna": {
+   "inputTokens": 153204666,
+   "outputTokens": 1089468,
+   "cachedInputTokens": 140630528,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 426783,
+   "turns": 192
+  },
+  "claude-haiku-5-5": {
+   "turns": 129,
+   "inputTokens": 299500862,
+   "outputTokens": 3611991,
+   "cachedInputTokens": 286321380,
+   "cacheCreationTokens": 13174110,
+   "reasoningTokens": 2267418
+  },
+  "claude-sonnet-5-5": {
+   "inputTokens": 736717524,
+   "outputTokens": 3215636,
+   "cachedInputTokens": 725252511,
+   "cacheCreationTokens": 11458851,
+   "reasoningTokens": 2060200,
+   "turns": 117
+  },
+  "claudeAgent": {
+   "inputTokens": 117148147,
+   "outputTokens": 553912,
+   "cachedInputTokens": 111713656,
+   "cacheCreationTokens": 5432953,
+   "reasoningTokens": 204196,
+   "turns": 94
+  },
+  "agy-model": {
+   "turns": 70
+  },
+  "gpt-6.1-terra": {
+   "inputTokens": 62679001,
+   "outputTokens": 414879,
+   "cachedInputTokens": 57678848,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 33574,
+   "turns": 62
+  },
+  "restful-walrus-ultra": {
+   "inputTokens": 180649098,
+   "outputTokens": 750628,
+   "cachedInputTokens": 173660948,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 328853,
+   "turns": 59
+  },
+  "claude-fable-5-1": {
+   "inputTokens": 367295308,
+   "outputTokens": 3738586,
+   "cachedInputTokens": 353542575,
+   "cacheCreationTokens": 13694957,
+   "reasoningTokens": 2239979,
+   "turns": 50
+  },
+  "agy-model-high": {
+   "turns": 45
+  },
+  "grok-4.7": {
+   "turns": 28
+  },
+  "gemini-4-carbon": {
+   "turns": 27
+  },
+  "gemini-4-neon": {
+   "inputTokens": 35333115,
+   "outputTokens": 110600,
+   "cachedInputTokens": 33838191,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 60558,
+   "turns": 25
+  },
+  "gpt-6-astra-1m": {
+   "inputTokens": 121520714,
+   "outputTokens": 332186,
+   "cachedInputTokens": 117901184,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 169976,
+   "turns": 7
+  },
+  "vibeproxy/gpt-6-luna": {
+   "turns": 4
+  },
+  "muse-wonder-full-1.0": {
+   "turns": 4
+  },
+  "restful-walrus": {
+   "inputTokens": 29280092,
+   "outputTokens": 97393,
+   "cachedInputTokens": 28444840,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 4830,
+   "turns": 3
+  },
+  "gemini-3.8-flash-low": {
+   "turns": 3
+  },
+  "gemini-3.8-flash-high": {
+   "turns": 2
+  },
+  "opencode/gpt-6.1-sol": {
+   "turns": 2
+  },
+  "muse-proxy-wonder": {
+   "inputTokens": 8816123,
+   "outputTokens": 23645,
+   "cachedInputTokens": 8516460,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 2042,
+   "turns": 2
+  },
+  "agy-demo": {
+   "turns": 2
+  },
+  "claude-nonexistent-9": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "cachedInputTokens": 0,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 0,
+   "turns": 1
+  },
+  "grok-4.7-build-fast": {
+   "turns": 1
+  },
+  "gemini-4-argon-low": {
+   "turns": 1
+  },
+  "muse-proxy-spark": {
+   "inputTokens": 109482,
+   "outputTokens": 2031,
+   "cachedInputTokens": 54001,
+   "cacheCreationTokens": 0,
+   "reasoningTokens": 1820,
+   "turns": 1
+  }
+ },
+ "tokens_total": {
+  "inputTokens": 203305106680,
+  "outputTokens": 605978216,
+  "cachedInputTokens": 199657135385,
+  "cacheCreationTokens": 2666411315,
+  "reasoningTokens": 232094581,
+  "turns": 40460
+ },
+ "turns_by_provider": {
+  "claudeAgent": 23538,
+  "codex": 13961,
+  "antigravity": 1659,
+  "muse": 1267,
+  "grok": 29,
+  "pi": 4,
+  "opencode": 2
+ },
+ "models_all": {
+  "claude-opus-5-5": 24922,
+  "claude-fable-5-2": 5367,
+  "gpt-6.1-sol": 3404,
+  "gpt-6-astra": 1801,
+  "muse-proxy-wonder-full": 800,
+  "gemini-4-argon-high": 254,
+  "gemini-4-argon": 251,
+  "gpt-6-luna": 193,
+  "claude-haiku-5-5": 137,
+  "claude-sonnet-5-5": 126,
+  "claude-fable-5-1": 73,
+  "agy-model": 70,
+  "gpt-6.1-terra": 62,
+  "restful-walrus-ultra": 59,
+  "gemini-4-carbon": 53,
+  "gemini-4-neon": 50,
+  "agy-model-high": 45,
+  "grok-4.7": 30,
+  "vibeproxy/gpt-6-luna": 8,
+  "gpt-6-astra-1m": 7,
+  "muse-wonder-full-1.0": 4,
+  "restful-walrus": 3,
+  "gemini-3.8-flash-low": 3,
+  "claude-nonexistent-9": 2,
+  "gemini-3.8-flash-high": 2,
+  "opencode/gpt-6.1-sol": 2,
+  "muse-proxy-wonder": 2,
+  "agy-demo": 2,
+  "grok-4.7-build-fast": 1,
+  "gemini-4-argon-low": 1,
+  "muse-proxy-spark": 1
+ },
+ "tools": {
+  "delegate_task": 6186,
+  "t3_thread_read": 1346,
+  "task_status": 674,
+  "t3_thread_send": 643,
+  "html_preview": 589,
+  "link_pull_request": 470,
+  "t3_thread_launch": 368,
+  "preview_evaluate": 268,
+  "orchestrator_capabilities": 233,
+  "t3_pending_request": 129,
+  "preview_wait_for": 97,
+  "watch_pull_request": 93,
+  "list_thread_pull_requests": 88,
+  "t3_thread_list": 84,
+  "unwatch_pull_request": 83,
+  "preview_snapshot": 79,
+  "t3_thread_wait": 72,
+  "preview_open": 53,
+  "t3_background_wait": 49,
+  "preview_act": 48,
+  "preview_navigate": 44,
+  "device_open": 42,
+  "preview_type": 38,
+  "preview_click": 34,
+  "html_render": 28,
+  "preview_status": 27,
+  "t3_thread_search": 27,
+  "preview_press": 22,
+  "update_scheduled_task": 18,
+  "list_scheduled_tasks": 17,
+  "task_cancel": 15,
+  "device_screenshot": 13,
+  "t3_project_list": 12,
+  "preview_hover": 11,
+  "t3_pending_request_read": 11,
+  "preview_set_appearance": 9,
+  "t3_preview_close": 9,
+  "preview_recording_start": 8,
+  "device_list": 8,
+  "t3_pending_request_list": 7,
+  "device_close": 7,
+  "t3_pending_request_respond": 6,
+  "schedule_task": 6,
+  "request_secret": 6,
+  "t3_thread_interrupt": 5,
+  "t3_thread_organize": 4,
+  "preview_recording_stop": 3,
+  "t3_thread_configuration": 3,
+  "t3_environment_read": 3,
+  "preview_resize": 2,
+  "delete_scheduled_task": 2,
+  "t3_thread_transfer": 2,
+  "t3_project_update": 2,
+  "t3_queue_list": 1,
+  "preview_dialog": 1,
+  "unlink_pull_request": 1,
+  "t3_thread_configure": 1,
+  "t3_attachment_prepare_upload": 1,
+  "t3_environment_link": 1
+ },
+ "features": {
+  "thread.settle": 806,
+  "thread.snooze": 307,
+  "thread.launch": 185,
+  "queue.steer": 46,
+  "thread.pin": 37,
+  "terminal.open": 35,
+  "thread.fork": 27,
+  "preview.open": 21,
+  "editor.open": 17,
+  "pull_request.action": 10,
+  "project.clone": 9,
+  "thread.runtime_mode.set": 8,
+  "device.open": 8,
+  "guest_message.submit": 6,
+  "guest_message.send": 5,
+  "thread.archive": 3,
+  "guest_share.create": 3,
+  "guest_share.join": 3,
+  "run.interrupt": 3,
+  "guest_share.close": 2,
+  "checkpoint.rollback": 1,
+  "thread.pull_request.link": 1,
+  "queue.edit": 1,
+  "guest_message.dismiss": 1
+ },
+ "errorCodes": {
+  "unknown": 821,
+  "OrchestratorMcpFailure": 540,
+  "exception": 165,
+  "PreviewAutomationTimeoutError": 42,
+  "PreviewAutomationExecutionError": 11,
+  "AiError": 9,
+  "PreviewAutomationTabNotFoundError": 6,
+  "DeviceToolUnavailableError": 1,
+  "DeviceOperationError": 1
+ },
+ "effort": {
+  "high": 23884,
+  "xhigh": 9366,
+  "max": 3924,
+  "medium": 744,
+  "ultra": 345,
+  "ultracode": 230,
+  "low": 76
+ },
+ "runtimeMode": {
+  "full-access": 56787,
+  "auto": 106,
+  "approval-required": 15
+ },
+ "clientDeviceModel": {
+  "iPhone19,3": 595,
+  "iPhone Duo": 575,
+  "iPhone 18 Pro Max": 183,
+  "iPhone18,2": 115,
+  "SM-F971U1": 101,
+  "iPhone19,4": 4,
+  "sdk_gphone64_x86_64": 3
+ },
+ "clientOs": {
+  "macOS": 3940,
+  "iOS": 1221,
+  "Linux": 112,
+  "Android": 100,
+  "Windows": 3
+ },
+ "connectionMethod": {
+  "relay": 4676,
+  "direct": 199,
+  "ssh": 2
+ },
+ "ownerSource": {
+  "connect": 1109,
+  "device": 1009,
+  "openai": 278,
+  "claude": 264
+ },
+ "serviceTier": {
+  "standard": 4830,
+  "ultrafast": 62,
+  "fast": 10
+ },
+ "delegation_pairs": {
+  "claudeAgent->claudeAgent": 2813,
+  "claudeAgent->codex": 1598,
+  "claudeAgent->muse": 844,
+  "claudeAgent->antigravity": 698,
+  "codex->codex": 500,
+  "codex->claudeAgent": 49,
+  "antigravity->claudeAgent": 48,
+  "antigravity->antigravity": 44,
+  "antigravity->codex": 43,
+  "muse->muse": 33,
+  "claudeAgent->grok": 28,
+  "codex->antigravity": 26,
+  "muse->codex": 19,
+  "muse->claudeAgent": 16,
+  "codex->muse": 13,
+  "antigravity->muse": 9,
+  "muse->antigravity": 3,
+  "claudeAgent->opencode": 2
+ },
+ "identifier_counts": {
+  "installId": 16,
+  "ownerId": 15,
+  "distinct_id": 14,
+  "uuid": 95789
+ },
+ "distinct_id_profile": {
+  "00f3b1991512": {
+   "events": 9546,
+   "serverOs": {
+    "Linux": 9546
+   },
+   "arch": {
+    "x64": 9546
+   },
+   "installIds": [
+    "-",
+    "6b2a2197579b"
+   ],
+   "first_day": "2026-09-04",
+   "last_day": "2026-11-06"
+  },
+  "48488d655392": {
+   "events": 32,
+   "serverOs": {
+    "Linux": 32
+   },
+   "arch": {
+    "x64": 32
+   },
+   "installIds": [
+    "-",
+    "373d03f13dc8"
+   ],
+   "first_day": "2026-09-27",
+   "last_day": "2026-11-08"
+  },
+  "a41ecda0cb0c": {
+   "events": 205,
+   "serverOs": {
+    "Linux": 205
+   },
+   "arch": {
+    "x64": 205
+   },
+   "installIds": [
+    "-",
+    "d0fcd8f98bb7"
+   ],
+   "first_day": "2026-09-27",
+   "last_day": "2026-11-23"
+  },
+  "3b4840ca3d1a": {
+   "events": 1984,
+   "serverOs": {
+    "Linux": 1984
+   },
+   "arch": {
+    "x64": 1984
+   },
+   "installIds": [
+    "-",
+    "8efea891b505"
+   ],
+   "first_day": "2026-09-27",
+   "last_day": "2026-11-23"
+  },
+  "592e8074b821": {
+   "events": 2976,
+   "serverOs": {
+    "macOS": 2976
+   },
+   "arch": {
+    "arm64": 2976
+   },
+   "installIds": [
+    "0c3e62bba989"
+   ],
+   "first_day": "2026-10-20",
+   "last_day": "2026-11-23"
+  },
+  "58939548d2c1": {
+   "events": 21960,
+   "serverOs": {
+    "Linux": 21960
+   },
+   "arch": {
+    "x64": 21960
+   },
+   "installIds": [
+    "3309264d392d"
+   ],
+   "first_day": "2026-10-20",
+   "last_day": "2026-11-24"
+  },
+  "e25f82654288": {
+   "events": 20400,
+   "serverOs": {
+    "Linux": 17624,
+    "macOS": 2776
+   },
+   "arch": {
+    "x64": 17624,
+    "arm64": 2776
+   },
+   "installIds": [
+    "a482ba5e966a",
+    "f756376079c5"
+   ],
+   "first_day": "2026-10-20",
+   "last_day": "2026-11-23"
+  },
+  "43ee99db4e64": {
+   "events": 26273,
+   "serverOs": {
+    "macOS": 11504,
+    "Linux": 14520,
+    "Windows": 249
+   },
+   "arch": {
+    "arm64": 11504,
+    "x64": 14769
+   },
+   "installIds": [
+    "6f24ed1088e8",
+    "67b554ed259a",
+    "f756376079c5",
+    "315e05a09f3c"
+   ],
+   "first_day": "2026-10-20",
+   "last_day": "2026-11-24"
+  },
+  "1ce84a716229": {
+   "events": 5342,
+   "serverOs": {
+    "Linux": 5342
+   },
+   "arch": {
+    "x64": 5342
+   },
+   "installIds": [
+    "c22fbce3b582"
+   ],
+   "first_day": "2026-10-20",
+   "last_day": "2026-11-24"
+  },
+  "e804e0423bee": {
+   "events": 2,
+   "serverOs": {
+    "Windows": 2
+   },
+   "arch": {
+    "x64": 2
+   },
+   "installIds": [
+    "e804e0423bee"
+   ],
+   "first_day": "2026-11-01",
+   "last_day": "2026-11-01"
+  },
+  "759117feeead": {
+   "events": 3072,
+   "serverOs": {
+    "Windows": 3072
+   },
+   "arch": {
+    "x64": 3072
+   },
+   "installIds": [
+    "e804e0423bee"
+   ],
+   "first_day": "2026-11-01",
+   "last_day": "2026-11-21"
+  },
+  "7f42123a21f4": {
+   "events": 834,
+   "serverOs": {
+    "Windows": 834
+   },
+   "arch": {
+    "x64": 834
+   },
+   "installIds": [
+    "5f3f57a4fa96"
+   ],
+   "first_day": "2026-11-02",
+   "last_day": "2026-11-22"
+  },
+  "66de9ef6be0e": {
+   "events": 3101,
+   "serverOs": {
+    "Windows": 3101
+   },
+   "arch": {
+    "x64": 3101
+   },
+   "installIds": [
+    "87b9fb8ddb0c"
+   ],
+   "first_day": "2026-11-12",
+   "last_day": "2026-11-23"
+  },
+  "6eae89248d89": {
+   "events": 62,
+   "serverOs": {
+    "macOS": 62
+   },
+   "arch": {
+    "arm64": 62
+   },
+   "installIds": [
+    "6f29e7722242"
+   ],
+   "first_day": "2026-11-20",
+   "last_day": "2026-11-24"
+  }
+ },
+ "pii_scan_hits": {},
+ "string_fields_cardinality": {
+  "appVersion": 129,
+  "clientAppVersion": 129,
+  "serverAppVersion": 125,
+  "t3CodeVersion": 125,
+  "tool": 59,
+  "model": 31,
+  "feature": 24,
+  "targetModel": 23,
+  "installId": 16,
+  "ownerId": 15,
+  "callerModel": 10,
+  "variant": 10,
+  "errorCode": 9,
+  "provider": 7,
+  "clientDeviceModel": 7,
+  "deviceModel": 7,
+  "effort": 7,
+  "observedModel": 7,
+  "callerProvider": 6,
+  "targetProvider": 6,
+  "clientOs": 5,
+  "creationSource": 5,
+  "requestKind": 5,
+  "ownerSource": 4,
+  "callerOrigin": 4,
+  "status": 4,
+  "segment": 4,
+  "childUsageStatus": 4,
+  "platform": 3,
+  "serverOs": 3,
+  "clientDeviceType": 3,
+  "connectionMethod": 3,
+  "surface": 3,
+  "runtimeMode": 3,
+  "terminalStatus": 3,
+  "usageStatus": 3,
+  "telemetryChannel": 3,
+  "delivery": 3,
+  "workspace": 3,
+  "serviceTier": 3,
+  "arch": 2,
+  "clientType": 2,
+  "serverArch": 2,
+  "serverMode": 2,
+  "user_agent": 2,
+  "os": 2,
+  "clientBrowser": 2,
+  "webDeployment": 2,
+  "decision": 2,
+  "observedBy": 2,
+  "outcome": 2,
+  "targetRuntimeMode": 2,
+  "completionWake": 2,
+  "mode": 2,
+  "createdBy": 2,
+  "workspaceStrategy": 2,
+  "childKind": 2,
+  "interactionMode": 1,
+  "usageScope": 1,
+  "from": 1,
+  "to": 1,
+  "targetInteractionMode": 1
+ },
+ "high_card_string_samples": {
+  "serverAppVersion": [
+   "0.0.38",
+   "0.0.39-nightly.20260904.1277",
+   "0.0.39-nightly.20260904.1280",
+   "0.0.39-nightly.20260905.1283",
+   "0.0.39-nightly.20260905.1286",
+   "0.0.39-nightly.20260906.1316",
+   "0.0.39-nightly.20260907.1325",
+   "0.0.39-nightly.20260907.1332"
+  ],
+  "t3CodeVersion": [
+   "0.0.38",
+   "0.0.39-nightly.20260904.1277",
+   "0.0.39-nightly.20260904.1280",
+   "0.0.39-nightly.20260905.1283",
+   "0.0.39-nightly.20260905.1286",
+   "0.0.39-nightly.20260906.1316",
+   "0.0.39-nightly.20260907.1325",
+   "0.0.39-nightly.20260907.1332"
+  ],
+  "appVersion": [
+   "0.0.39-nightly.20260904.1277",
+   "0.0.39-nightly.20260904.1280",
+   "0.0.39-nightly.20260905.1283",
+   "0.0.39-nightly.20260905.1285",
+   "0.0.39-nightly.20260905.1286",
+   "0.0.39-nightly.20260906.1316",
+   "0.0.39-nightly.20260907.1325",
+   "0.0.39-nightly.20260907.1332"
+  ],
+  "clientAppVersion": [
+   "0.0.39-nightly.20260904.1277",
+   "0.0.39-nightly.20260904.1280",
+   "0.0.39-nightly.20260905.1283",
+   "0.0.39-nightly.20260905.1285",
+   "0.0.39-nightly.20260905.1286",
+   "0.0.39-nightly.20260906.1316",
+   "0.0.39-nightly.20260907.1325",
+   "0.0.39-nightly.20260907.1332"
+  ],
+  "model": [
+   "agy-demo",
+   "agy-model",
+   "agy-model-high",
+   "claude-fable-5-1",
+   "claude-fable-5-2",
+   "claude-haiku-5-5",
+   "claude-nonexistent-9",
+   "claude-opus-5-5"
+  ],
+  "tool": [
+   "delegate_task",
+   "delete_scheduled_task",
+   "device_close",
+   "device_list",
+   "device_open",
+   "device_screenshot",
+   "html_preview",
+   "html_render"
+  ]
+ },
+ "turn_duration_ms": {
+  "n": 40460,
+  "median": 102626,
+  "p90": 1107888,
+  "max": 128303826
+ },
+ "ingest_lag_s": {
+  "median": 5.0,
+  "p99": 11.0,
+  "max": 5004.0,
+  "min": -72.0
+ },
+ "inserted_at_range": [
+  "2026-10-03 06:26:30.085",
+  "2026-11-24 17:29:05.087"
+ ],
+ "to_posthog_false_events": {
+  "mcp.tool.invoked": 100
+ }
+}
