@@ -7,7 +7,7 @@ Analysed 24 Nov 2026 (UK time). All figures come from `results/*.json`; nothing 
   timestamp, received_at, inserted_at, properties (JSON string), user_agent, to_posthog`.
 - 95,789 events (matches Theo's stated count), 108.97 MB uncompressed, 6.06 MB gzipped.
 - Event timestamps 2026-09-04 10:48 to 2026-11-24 17:28 (assumed UTC): 82 calendar days, events on all 82.
-  `inserted_at` starts 2026-10-03, so September events were backfilled.
+  `received_at` trails `timestamp` by a median of ~5 s even for September events, while `inserted_at` starts 2026-10-03, so ingest received them live and loaded the export table later.
 - 16 event types, 103 distinct property keys, 14 `distinct_id`s, 16 `installId`s, 15 `ownerId`s.
 
 ## Event types
@@ -23,7 +23,7 @@ Analysed 24 Nov 2026 (UK time). All figures come from `results/*.json`; nothing 
 | feature.used | 1,545 |
 | client.thread.started | 914 |
 | server.boot.heartbeat | 899 |
-| other 6 types | 164 |
+| other 6 types | 162 |
 
 ## What the data says about his usage
 - Providers (turns completed): Claude agent 23,538, Codex 13,961, Antigravity 1,659, Muse 1,267, Grok 29, pi 4, opencode 2.
@@ -63,6 +63,8 @@ What IS there and worth noting:
 6. Dev/test data is mixed in: models such as `claude-nonexistent-9` and `agy-demo` appear, consistent with Theo developing T3 Code.
 
 ## Code changes the same day (pingdotgg/t3code, 24 Nov 2026)
+- 4eccb0e "relay traces no longer record callers' IP addresses or user agents".
+- 3380585 "delete a user's relay data when Clerk deletes the user".
 - 84e4264 "analytics no longer reads or sends Codex and Claude account IDs" (ownerSource now only `connect`/`device`).
 - 482e197 "mobile: analytics uses its own random device id".
 - 3ba003b "Windows desktop applies the saved user telemetry opt-out" (the opt-out was not applied there before).
@@ -96,4 +98,4 @@ The original analysis did not run other providers. Independent code assessments 
 
 ## Follow-up verification
 
-The original scripts and both dump hashes reproduced exactly. The code assessment corrected the thread-count interpretation, connection-method scope, turn-only usage-status counts, historical account-hash input split (`owner_observed` vs legacy `distinct_id`), and post-`11edf884` relay doc update (`dc7b880`) above. A single `connect` owner hash occurs across all 16 install IDs in the dump; current source retains Connect account correlation. The export also contains 100 rows marked `to_posthog: false`. These observations do not establish receiver retention or logging policy. See [verification results](results/code-assessment/corrections.json).
+The original scripts and both dump hashes reproduced exactly. The code assessment corrected the thread-count interpretation, connection-method scope, turn-only usage-status counts, "other 6 types" sum (162, not 164), `received_at` vs `inserted_at` timing, historical account-hash input split (`owner_observed` vs legacy `distinct_id`), and additional 24 Nov relay commits (`4eccb0e`, `3380585`, `dc7b880`) above. A single `connect` owner hash occurs across all 16 install IDs in the dump and a single `device` owner hash occurs across 15 installs; current source retains both. The export also contains 100 rows marked `to_posthog: false`. These observations do not establish receiver retention or logging policy. See [verification results](results/code-assessment/corrections.json).
