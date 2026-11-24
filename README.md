@@ -1,4 +1,20 @@
-# Theo's T3 Code telemetry dump: analysis
+# Theo's T3 Code telemetry dump & code assessment
+
+## TL;DR
+
+Reproducible analysis of Theo's 24 Nov 2026 T3 Code product-analytics export (95,789 events) alongside independent source assessments of `pingdotgg/t3code` at [`55085df2`](https://github.com/pingdotgg/t3code/tree/55085df2a6c384f34b37901d5dcbc5925ada1600) by [Codex](reports/codex.md), [Antigravity](reports/antigravity.md), and [Grok](reports/grok.md).
+
+- **No prompts or code in product analytics:** Standard product events carry usage metadata, not prompts, responses, file contents, or local SQLite conversations. Same-day 24 Nov commits removed `~/.codex/auth.json` and `~/.claude.json` account-ID reading, separated mobile relay/analytics IDs, fixed Windows desktop opt-out reading, stripped machine details from relay traces, and marked agent feedback anonymous.
+- **Anonymous feedback can still be linked on the wire (reproduced offline):** `agent.feedback` (`anonymous: true`, default off) shares the same `AnalyticsService` queue and `POST /batch/` body as identified install events, contradicting `docs/user/telemetry.md`.
+- **Opt-outs are fragmented and have desktop gaps in code:** Product analytics defaults on with no in-app UI toggle (`T3CODE_TELEMETRY_ENABLED=false` only). In source (not live-reproduced in a desktop build), desktop server relay tracing captures `process.env` before deferred shell discovery finishes, and desktop shell discovery omits `T3CODE_OTEL_SDK_DISABLED` and `OTEL_SDK_DISABLED`. Separate channels (default-on mobile crash reports, disconnected hosted web relay traces, and opt-in agent activity publishing, which sends readable project and thread titles) are not controlled by `T3CODE_TELEMETRY_ENABLED`.
+- **Correlatable hashes and raw strings remain:** Current code still hashes T3 Connect account IDs with unsalted SHA-256 (one Connect hash links all 16 installs in the published dump). Product events also transmit raw `WSL_DISTRO_NAME`, custom model IDs and relative paths (for example `models/customer-acme.gguf`), mobile device models, and web browser strings.
+- **What cannot be verified from source or the dump:** `ingest.t3.codes` server code, IP logging, PostHog/Axiom deployed retention, whether pre-24 Nov OpenAI/Claude account hashes were purged, and third-party AI provider logging.
+
+Start with [CODE-ASSESSMENT.md](CODE-ASSESSMENT.md) for the consolidated findings, [ANALYSIS.md](ANALYSIS.md) for the dump breakdown, or the individual provider reports ([Codex](reports/codex.md), [Antigravity](reports/antigravity.md), [Grok](reports/grok.md); Claude was blocked by API rate limits on both attempted accounts).
+
+---
+
+## Published dump and reproduction
 
 Theo (@theo) published every T3 Code product-analytics event tied to his own installs on 24 Nov 2026
 ([post](https://x.com/theo/status/2125332535358222808), thread start
