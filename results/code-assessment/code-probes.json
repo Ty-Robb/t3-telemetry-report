@@ -1,0 +1,80 @@
+{
+  "revision": "55085df2a6c384f34b37901d5dcbc5925ada1600",
+  "method": "Offline source-fragment execution with synthetic inputs. No network or full application runtime.",
+  "feedback": [
+    {
+      "input": "email user@example.com",
+      "output": "email [redacted]"
+    },
+    {
+      "input": "Read /Users/example/private.txt",
+      "output": "Read [redacted]"
+    },
+    {
+      "input": "Patient Alice has diabetes",
+      "output": "Patient Alice has diabetes"
+    },
+    {
+      "input": "password=hunter2",
+      "output": "password=hunter2"
+    }
+  ],
+  "models": [
+    {
+      "input": "/Users/example/customer-acme.gguf",
+      "output": "customer-acme.gguf"
+    },
+    {
+      "input": "models/customer-acme.gguf",
+      "output": "models/customer-acme.gguf"
+    },
+    {
+      "input": "acme-private-model",
+      "output": "acme-private-model"
+    }
+  ],
+  "batch": [
+    {
+      "uuid": "identified-event",
+      "event": "provider.turn.completed",
+      "distinct_id": "synthetic-install",
+      "properties": {
+        "installId": "synthetic-install",
+        "$process_person_profile": false,
+        "platform": "linux",
+        "wsl": "customer-acme-work",
+        "arch": "x64",
+        "t3CodeVersion": "test",
+        "telemetryChannel": "test",
+        "clientType": "desktop-app",
+        "serverOs": "Linux",
+        "serverArch": "x64",
+        "serverWslDistro": "customer-acme-work",
+        "serverAppVersion": "test",
+        "serverMode": "desktop"
+      },
+      "timestamp": "synthetic-time"
+    },
+    {
+      "uuid": "feedback-event",
+      "event": "agent.feedback",
+      "distinct_id": "feedback-event",
+      "properties": {
+        "kind": "bug",
+        "$process_person_profile": false,
+        "platform": "linux",
+        "wsl": "customer-acme-work",
+        "arch": "x64",
+        "t3CodeVersion": "test",
+        "telemetryChannel": "test",
+        "clientType": "desktop-app",
+        "serverOs": "Linux",
+        "serverArch": "x64",
+        "serverWslDistro": "customer-acme-work",
+        "serverAppVersion": "test",
+        "serverMode": "desktop"
+      },
+      "timestamp": "synthetic-time"
+    }
+  ]
+}
